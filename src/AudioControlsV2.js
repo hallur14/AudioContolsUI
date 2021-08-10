@@ -8,7 +8,6 @@ function AudioControlsV2 ({ audioProps }) {
     const IncrementSoundProperty = (propertyName) => {
         setAudioData([...audioData].map(audioProperty => {
             if(audioProperty.typeName === propertyName && audioProperty.value < 10){
-                console.log(audioProperty.typeName + ' ' + propertyName + ' ' + audioProperty.value);
                 return {
                     ...audioProperty,
                     value: audioProperty.value + 1
@@ -40,8 +39,7 @@ function AudioControlsV2 ({ audioProps }) {
                     value={audioProp.value} 
                     typeName={audioProp.typeName} 
                     incrementValue={() => IncrementSoundProperty(audioProp.typeName)}
-                    decrementValue={() => DecrementSoundProperty(audioProp.typeName)}
-                    />
+                    decrementValue={() => DecrementSoundProperty(audioProp.typeName)} />
             ))}
         </div>
     );
